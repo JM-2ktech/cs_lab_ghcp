@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 460" role="img"
+     aria-label="하네스는 실행 런타임이고 오케스트레이션은 그 안에서 도는 루프다. 모델은 추론만 한다">
+  <style>
+    .b  { fill:#fff; stroke:#c9c6d6; stroke-width:1.5 }
+    .t  { font-family:'Segoe UI','Malgun Gothic',system-ui,sans-serif; fill:#27262b }
+    .h  { font-size:16px; font-weight:700 }
+    .h2 { font-size:13px; font-weight:700 }
+    .s  { font-size:12.5px }
+    .m  { font-size:12px; fill:#5c5962 }
+    .ar { stroke:#7253ed; stroke-width:2; fill:none; marker-end:url(#a) }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7253ed"/>
+    </marker>
+  </defs>
+
+  <rect x="285" y="14" width="250" height="44" rx="22" fill="#f4f2fb" stroke="#7253ed" stroke-width="1.5"/>
+  <text class="t h" x="410" y="42" text-anchor="middle">사용자의 목표</text>
+  <path class="ar" d="M410,58 L410,86"/>
+
+  <rect x="110" y="90" width="600" height="222" rx="10" fill="#faf9fe" stroke="#7253ed" stroke-width="2"/>
+  <text class="t h" x="132" y="118">하네스 — 실행 런타임</text>
+  <text class="t m" x="132" y="137">무엇을 쓸 수 있고 얼마를 내는지가 여기서 정해집니다</text>
+
+  <rect class="b" x="132" y="150" width="280" height="146" rx="8"/>
+  <text class="t h2" x="150" y="174">오케스트레이션 — 도는 루프</text>
+  <text class="t s" x="150" y="200">계획을 세운다</text>
+  <text class="t s" x="150" y="222">도구를 고른다</text>
+  <text class="t s" x="150" y="244">결과를 관찰한다</text>
+  <text class="t s" x="150" y="266">끝났는지 정한다</text>
+  <text class="t m" x="150" y="288">하네스가 하는 일 중 하나입니다</text>
+
+  <rect class="b" x="428" y="150" width="264" height="146" rx="8"/>
+  <text class="t h2" x="446" y="174">하네스가 함께 쥐는 것</text>
+  <text class="t s" x="446" y="200">Sandbox — 파일을 열어 전부 읽는다</text>
+  <text class="t s" x="446" y="222">파일 생성 — Word · Excel · PDF</text>
+  <text class="t s" x="446" y="244">Skill · Memory · Knowledge · 도구</text>
+  <text class="t s" x="446" y="266">과금 단위 — Copilot Credits</text>
+  <text class="t m" x="446" y="288">하네스를 고르면 이 넷이 따라옵니다</text>
+
+  <path class="ar" d="M300,312 L300,368"/>
+  <text class="t m" x="288" y="344" text-anchor="end">무엇을 보낼지 정해 부른다</text>
+  <path class="ar" d="M520,368 L520,312"/>
+  <text class="t m" x="532" y="344">돌아온 것을 해석한다</text>
+
+  <rect class="b" x="110" y="372" width="600" height="66" rx="10" fill="#fbfbfc"/>
+  <text class="t h" x="410" y="400" text-anchor="middle">모델</text>
+  <text class="t s" x="410" y="422" text-anchor="middle">추론하고 생성합니다. 스스로 실행하지는 않습니다.</text>
+
+  <text class="t m" x="410" y="454" text-anchor="middle">하네스가 없으면 모델의 답은 문장으로 끝납니다.</text>
+</svg>

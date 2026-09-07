@@ -1,0 +1,127 @@
+---
+title: 홈
+nav_order: 1
+---
+
+# GHCP 하네스 Lab 🧾
+
+**"두 개의 파일로 완료된 월말 정산."**
+
+<!-- 저작 메모(2026-09-02 개편): 랩 넷 확정에 맞춰 이 페이지를 다시 맞췄다.
+     분 배정은 설계 문서 §2가 확정본이다. 여기 표를 §2 표와 어긋나게 두지 않는다. -->
+
+법인카드 명세에 1,000행의 결과와 증빙 대장에 있는 997행을 대조합니다. 숫자가 다르니 어딘가 어긋나 있습니다. 어긋난 것을 찾아 목록으로 만들고, 맞는 것은 처리 문서로 수행합니다. 이 한 가지 업무를 구현하면서 하네스의 여섯 부품을 만납니다.
+
+**복리후생 문의를 받던 에이전트가 답하지 못한 자리**에서 시작합니다. 규정을 읽고 문답하는 것과 파일 두 개를 열어 맞춰 보는 것은 다른 일입니다.
+
+{: .note }
+이 사이트는 **3시간 과정**을 목적으로 합니다. Lab 1~4와 피날레로 한 세션이 구성됩니다.
+
+---
+
+## 오늘 쓰는 것
+
+**[GitHub Copilot 하네스](./docs/glossary.html#ghcp-harness)** 위에서 만듭니다. [하네스](./docs/glossary.html#harness)는 Copilot Studio에서 만든 것을 실제로 돌리는 런타임입니다. 무엇을 만들든 그 아래에 하네스가 하나 깔립니다. 셋 중 무엇을 골랐느냐에 따라 쓸 수 있는 부품과 과금이 구분됩니다.
+
+### 셋을 한 줄로
+
+| 하네스 | 한 줄 |
+|---|---|
+| [Copilot 채팅 하네스](./docs/glossary.html#chat-harness) | 아는 것을 찾아서 답한다 |
+| [표준 하네스](./docs/glossary.html#standard-harness) | 만든 사람이 경로를 설계한다 |
+| [GitHub Copilot 하네스](./docs/glossary.html#ghcp-harness) | Agent가 경로를 스스로 정한다 |
+
+### 무엇이 갈리나
+
+| | Copilot 채팅 | 표준 | GitHub Copilot |
+|---|---|---|---|
+| 맡는 업무 | 사내 자료 질의응답 | 규칙 기반 정형 업무 | 다단계 추론 · 분석 · 파일 생성 |
+| 경로를 누가 정하나 | 사용자 질문 | 설계자 | [Agent](./docs/glossary.html#agent) |
+| 실행 | 질문 → 검색 → 답변 | 정해 둔 순서대로 | 판단 → 실행 → 관찰을 반복 |
+| 도구 | M365 검색 중심 | 설계한 액션 호출 | 상황에 따라 고르고 이어 붙인다 |
+| 파일 생성 | 제한적 | 주 목적이 아니다 | Word · Excel · PowerPoint · PDF |
+| [Skill](./docs/glossary.html#skill) · [Memory](./docs/glossary.html#memory) | 없다 | 없다 | 있다 |
+| 게시 범위 | 사내 | 사내 · 사외 | 사내 · 사외 |
+| 과금 | 라이선스 포함 또는 사용량 | 라이선스 | [Copilot Credits](./docs/glossary.html#copilot-credits) |
+| 대표 | M365 Copilot Chat 확장 | 기존 Copilot Studio 에이전트 | 오늘의 `비용 처리 담당` |
+
+{: .important }
+**하네스는 만들 때 고릅니다.** 표준과 GitHub Copilot은 서로 직접 변환되지 않습니다. 옮기려면 다시 만듭니다.
+
+[표준 하네스](./docs/glossary.html#standard-harness)와 달리 GitHub Copilot 하네스에는 [토픽](./docs/glossary.html#topic)이 없습니다. 길을 미리 그려 두지 않고, [Agent](./docs/glossary.html#agent)가 자료를 보고 무슨 일인지 판단합니다. 표의 「경로를 누가 정하나」 한 줄이 오늘 세 시간 내내 돌아오는 자리입니다.
+
+### 세 트랙에서 오늘이 선 자리
+
+| 과정 | 하네스 | 다루는 것 |
+|---|---|---|
+| 입문 · 중급 | 표준 | [Knowledge](./docs/glossary.html#knowledge) · [토픽](./docs/glossary.html#topic) · 플로 · 커넥터 |
+| 오늘 | GitHub Copilot | [Skill](./docs/glossary.html#skill) · [Memory](./docs/glossary.html#memory) · [Sandbox](./docs/glossary.html#sandbox) · 연결된 에이전트 · [Workflow](./docs/glossary.html#workflow) |
+
+아는 것을 답하는 데서 시작해, 상태를 바꾸는 데로 가고, 업무를 끝까지 수행하는 데까지 갑니다. 오늘은 마지막 칸입니다.
+
+Copilot 채팅 하네스로는 오늘 아무것도 만들지 않습니다. 다만 [Lab 4](./docs/lab4.html)에서 M365 Copilot 노드를 붙일 때 그쪽 자리를 한 번 만납니다.
+
+<!-- 촬영: Add knowledge 대화상자 또는 하네스 선택 화면. 프로브 뒤에 찍는다 -->
+
+---
+
+## 세 시간의 흐름
+
+```mermaid
+flowchart LR
+    A[Agent · Sandbox<br>판단하고 대사한다] --> B[Skill<br>회사 방식으로]
+    B --> C[Memory · 게시<br>맥락을 남기고 밖으로]
+    C --> D[Workflow<br>받아서 가른다]
+```
+
+**Lab 1과 Lab 2가 중요합니다.** Lab 1에서 결과가 나오되 양식이 제각각인 것을 보고, Lab 2에서 통일된 양식으로 제작합니다.
+
+---
+
+## 과정 구성
+
+각 랩은 **타이머**로 페이스를 맞추며 진행합니다.
+
+| | 분 | 내용 |
+|---|---|---|
+| [시작 전에](./docs/before-you-start.html) | — | 환경 확인 · 재료 내려받기 |
+| [인터미션 1](./docs/intermission.html) | 12 | 하네스 · 세 트랙 · 재료 · [Sandbox](./docs/glossary.html#sandbox) 구조 |
+| [Lab 1. 판단하는 Agent](./docs/lab1.html) | 40 | Agent · [Knowledge](./docs/glossary.html#knowledge) · 실행 환경 · **1,000행 대사** |
+| [인터미션 2](./docs/intermission.html) | 6 | [Skill](./docs/glossary.html#skill)이란 무엇인가 |
+| [Lab 2. Skill](./docs/lab2.html) | 35 | 내장 스킬 · 커스텀 스킬 · 표준 양식 문서 |
+| [인터미션 3](./docs/intermission.html) | 4 | 기억은 두 층이다 |
+| [Lab 3. Memory와 게시](./docs/lab3.html) | 25 | [Memory](./docs/glossary.html#memory) · 에이전트 화면 · 게시 |
+| [인터미션 4](./docs/intermission.html) | 6 | 조건문이 못 가르는 것 |
+| [Lab 4. Workflow](./docs/lab4.html) | 50 | 분류 · Agent 노드 · M365 Copilot · Teams |
+| [피날레](./docs/finale.html) | 2 | 오늘 한 것과 안 한 것 |
+
+인터미션 넷에서 무엇을 다루는지는 [인터미션](./docs/intermission.html)에 정리해 두었습니다.
+
+용어는 [용어집](./docs/glossary.html)에 처음 등장 순서대로 정리해 두었습니다.
+
+---
+
+**고정 지식과 사용자별 설정은 따로 둔다**
+[Knowledge](./docs/glossary.html#knowledge)에는 에이전트가 늘 갖고 있어야 하는 고정 지식이 들어갑니다. 회사의 규정이 여기입니다. 「프로젝트 비용에는 프로젝트 코드가 필요하다」(규정 §6.2)가 그것입니다. [Memory](./docs/glossary.html#memory)에는 사용자별로 구분되는 설정이 남습니다. 「이 사람은 프로젝트 코드를 먼저 확인받고 넘어간다」가 이쪽입니다. 가르는 기준은 다른 사람이 물어도 같은 답이 나와야 하는가입니다. Lab 3에서 뒤쪽을 직접 남겨 봅니다.
+
+**행의 개수를 세는 것과 회계적 대사는 다르다**
+명세와 대장의 행의 개수 차이는 3입니다. 다만 실제로 데이터의 차이는 3개가 아닙니다.
+
+<!-- 미확정 — 어긋난 데이터의 건수를 숫자로 못 박지 않았다. 면제 3 · 누락 1 · 중복 1 · 금액 1 을
+     어디까지 세느냐에 따라 5 도 6 도 된다. 에이전트를 만들어 실제로 돌려 본 뒤 확정한다.
+     확정되면 여기와 _instructions/재료_설계와_정답.md §4 를 같은 숫자로 맞춘다. -->
+
+**실행 환경을 바꾸면 처리할 수 있는 양이 달라진다**
+[Sandbox](./docs/glossary.html#sandbox)는 파일 자체를 열어 전체를 읽습니다. 그만큼 [Copilot Credits](./docs/glossary.html#copilot-credits)를 씁니다. 다만 읽는 행의 개수가 곧 사용량의 정비례가 되는 것은 아닙니다.
+
+**자동화하지 않을 자리를 정하는 것도 설계다**
+Lab 4에서 비용 처리와 무관한 요청을 사람에게 돌리는 경로를 직접 만듭니다. 무책임한 자동화보다 확인을 통한 프로세스 처리가 더욱 안정적인 자동화입니다.
+
+---
+
+{: .note }
+등장하는 회사·직원·금액·규정은 모두 가상 설정(한별소프트)입니다. 실제 카드 명세나 영수증을 업로드하지 마세요.
+
+---
+
+[시작 전 확인부터 →](./docs/before-you-start.html){: .btn .btn-purple }

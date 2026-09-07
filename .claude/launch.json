@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "cs_lab_ghcp",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["_instructions/serve.py", "4000"],
+      "port": 4000,
+      "url": "http://localhost:4000"
+    }
+  ]
+}

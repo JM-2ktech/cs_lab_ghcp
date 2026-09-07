@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 300" role="img"
+     aria-label="표준 하네스는 정해 둔 순서를 따르고 GHCP 하네스는 계획과 관찰을 반복한다">
+  <style>
+    .t  { font-family:'Segoe UI','Malgun Gothic',system-ui,sans-serif; fill:#27262b }
+    .h  { font-size:15px; font-weight:700 }
+    .s  { font-size:13px }
+    .m  { font-size:12px; fill:#5c5962 }
+    .n  { fill:#fff; stroke:#c9c6d6; stroke-width:1.5 }
+    .np { fill:#faf9fe; stroke:#7253ed; stroke-width:1.5 }
+    .ag { stroke:#a9a5b8; stroke-width:1.5; fill:none; marker-end:url(#g) }
+    .ar { stroke:#7253ed; stroke-width:2; fill:none; marker-end:url(#a) }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7253ed"/>
+    </marker>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a9a5b8"/>
+    </marker>
+  </defs>
+
+  <text class="t h" x="20" y="34">표준 하네스</text>
+  <text class="t m" x="130" y="34">설계자가 그린 경로를 그대로 돕니다</text>
+  <rect class="n" x="20" y="52" width="120" height="40" rx="8"/>
+  <text class="t s" x="80" y="77" text-anchor="middle">목표</text>
+  <path class="ag" d="M144,72 L176,72"/>
+  <rect class="n" x="180" y="52" width="150" height="40" rx="8"/>
+  <text class="t s" x="255" y="77" text-anchor="middle">정해 둔 1단계</text>
+  <path class="ag" d="M334,72 L366,72"/>
+  <rect class="n" x="370" y="52" width="150" height="40" rx="8"/>
+  <text class="t s" x="445" y="77" text-anchor="middle">정해 둔 2단계</text>
+  <path class="ag" d="M524,72 L556,72"/>
+  <rect class="n" x="560" y="52" width="120" height="40" rx="8"/>
+  <text class="t s" x="620" y="77" text-anchor="middle">응답</text>
+
+  <line x1="20" y1="126" x2="800" y2="126" stroke="#e6e4ee" stroke-width="1"/>
+
+  <text class="t h" x="20" y="164">GHCP 하네스</text>
+  <text class="t m" x="130" y="164">목표를 받아 계획하고, 결과를 보고 다시 세웁니다</text>
+  <rect class="np" x="20" y="182" width="104" height="40" rx="8"/>
+  <text class="t s" x="72" y="207" text-anchor="middle">목표</text>
+  <path class="ar" d="M128,202 L156,202"/>
+  <rect class="np" x="160" y="182" width="104" height="40" rx="8"/>
+  <text class="t s" x="212" y="207" text-anchor="middle">계획</text>
+  <path class="ar" d="M268,202 L296,202"/>
+  <rect class="np" x="300" y="182" width="120" height="40" rx="8"/>
+  <text class="t s" x="360" y="207" text-anchor="middle">도구 호출</text>
+  <path class="ar" d="M424,202 L452,202"/>
+  <rect class="np" x="456" y="182" width="104" height="40" rx="8"/>
+  <text class="t s" x="508" y="207" text-anchor="middle">관찰</text>
+  <path class="ar" d="M564,202 L592,202"/>
+  <rect class="np" x="596" y="182" width="104" height="40" rx="8"/>
+  <text class="t s" x="648" y="207" text-anchor="middle">검증</text>
+  <path class="ar" d="M704,202 L732,202"/>
+  <rect class="np" x="736" y="182" width="64" height="40" rx="8"/>
+  <text class="t s" x="768" y="207" text-anchor="middle">완료</text>
+
+  <path class="ar" d="M508,226 L508,262 L212,262 L212,226"/>
+  <text class="t m" x="360" y="282" text-anchor="middle">안 되면 계획을 다시 세웁니다</text>
+</svg>

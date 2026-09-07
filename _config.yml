@@ -1,0 +1,75 @@
+title: "GHCP 하네스 Lab"
+description: >-
+  Copilot Studio GitHub Copilot 하네스 교안. 월말 법인카드 비용 대사를 소재로
+  Agent·Knowledge·Skill·Sandbox·Memory·Workflow를 랩 4개(180분)로 다루는 사내교육 과정입니다.
+
+# ⚠️ 아직 배포하지 않는다. 랩 본문이 프로브 여섯 이전의 골격 상태다.
+baseurl: "/cs_lab_ghcp"
+url: ""
+
+# ── SharePoint 재료 배포처 ────────────────────────────────────────
+# ⚠️ 2026-09-02부터 본문에서 부르지 않는다. 테넌트 주소가 교안에 박히면 환경이 바뀔 때마다
+#    본문을 고쳐야 하고 배포본에 사내 주소가 남는다. 수강생에게는 강사가 당일 안내한다.
+#    여기 남겨 둔 것은 강사가 어디에 올려 두었는지 찾기 위한 기록이다.
+# _config.yml 은 서버가 다시 뜰 때만 읽힌다 — 고친 뒤 jekyll serve 를 다시 시작한다.
+sp:
+  knowledge: "https://2ktech.sharepoint.com/sites/edulab/Knowledge/ghcp"
+  template:  "https://2ktech.sharepoint.com/sites/edulab/Template/ghcp"
+  sample:    "https://2ktech.sharepoint.com/sites/edulab/Sample/ghcp"
+
+theme: just-the-docs
+plugins:
+  - jekyll-feed
+
+# 코드블록 복사 버튼 — 테마 기본값도 true지만, 이 교안은 복붙이 주 동작이라 명시해 둔다.
+# 버튼 스타일(상시 노출·다크 배경 대응)은 _sass/custom/custom.scss에 있다.
+enable_copy_code_button: true
+
+search_enabled: true
+search:
+  heading_level: 2
+  previews: 3
+
+mermaid:
+  version: "10.9.1"
+
+aux_links:
+  "Microsoft Learn — 하네스 고르기":
+    - "https://learn.microsoft.com/microsoft-copilot-studio/harnesses-overview"
+
+nav_sort: order
+color_scheme: light
+
+# ★ 필수 — 전 페이지 기본 레이아웃 (없으면 테마 미적용 = 맨 HTML 렌더링)
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+# Just the Docs callouts — 본문의 {: .note } / {: .warning } / {: .important } / {: .time } 렌더링 정의
+callouts_level: quiet
+callouts:
+  note:
+    title: 팁
+    color: blue
+  time:
+    title: 시간
+    color: green
+  warning:
+    title: 주의
+    color: red
+  important:
+    title: 핵심
+    color: yellow
+
+# 빌드 제외
+# ⚠️ materials/ 는 제외하지 않는다 — 수강생이 사이트에서 재료를 내려받는다.
+#    정답지는 _instructions/ 에 있고, 그쪽은 제외된다.
+exclude:
+  - _instructions/
+  - README.md
+  - CLAUDE.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
