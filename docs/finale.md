@@ -30,7 +30,7 @@ flowchart LR
 | [Knowledge](./glossary.html#knowledge) | 정기결제 3건을 누락이 아니라 면제로 가른 근거 |
 | [Skill](./glossary.html#skill) | 결과 문서가 회사 양식으로 나오게 한 것 |
 | [Sandbox](./glossary.html#sandbox) | 1,000행을 열어 합계 `100,849,600` 을 맞춘 자리 |
-| [Memory](./glossary.html#memory) | 새 대화에서 프로젝트 코드를 먼저 되물은 것 |
+| [Memory](./glossary.html#memory) | 새 대화에서 형식을 말하지 않았는데 사람별 목록으로 나온 것 |
 | [Workflow](./glossary.html#workflow) | 사람이 창을 열지 않아도 시작되고, 평문을 갈래로 가른 것 |
 
 **하나라도 빼면 무엇이 막히는지**를 오늘 직접 봤습니다. 기능 설명으로 배운 것이 아닙니다.

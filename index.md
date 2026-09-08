@@ -84,25 +84,19 @@ flowchart LR
 
 | | 분 | 내용 |
 |---|---|---|
-| [시작 전에](./docs/before-you-start.html) | — | 환경 확인 · 재료 내려받기 |
-| [인터미션 1](./docs/intermission.html) | 12 | 하네스 · 세 트랙 · 재료 · [Sandbox](./docs/glossary.html#sandbox) 구조 |
+| [시작 전에](./docs/before-you-start.html) | 10 | 환경 확인 · 재료 내려받기 |
 | [Lab 1. 판단하는 Agent](./docs/lab1.html) | 40 | Agent · [Knowledge](./docs/glossary.html#knowledge) · 실행 환경 · **1,000행 대사** |
-| [인터미션 2](./docs/intermission.html) | 6 | [Skill](./docs/glossary.html#skill)이란 무엇인가 |
 | [Lab 2. Skill](./docs/lab2.html) | 35 | 내장 스킬 · 커스텀 스킬 · 표준 양식 문서 |
-| [인터미션 3](./docs/intermission.html) | 4 | 기억은 두 층이다 |
 | [Lab 3. Memory와 게시](./docs/lab3.html) | 25 | [Memory](./docs/glossary.html#memory) · 에이전트 화면 · 게시 |
-| [인터미션 4](./docs/intermission.html) | 6 | 조건문이 못 가르는 것 |
 | [Lab 4. Workflow](./docs/lab4.html) | 50 | 분류 · Agent 노드 · M365 Copilot · Teams |
 | [피날레](./docs/finale.html) | 2 | 오늘 한 것과 안 한 것 |
-
-인터미션 넷에서 무엇을 다루는지는 [인터미션](./docs/intermission.html)에 정리해 두었습니다.
 
 용어는 [용어집](./docs/glossary.html)에 처음 등장 순서대로 정리해 두었습니다.
 
 ---
 
 **고정 지식과 사용자별 설정은 따로 둔다**
-[Knowledge](./docs/glossary.html#knowledge)에는 에이전트가 늘 갖고 있어야 하는 고정 지식이 들어갑니다. 회사의 규정이 여기입니다. 「프로젝트 비용에는 프로젝트 코드가 필요하다」(규정 §6.2)가 그것입니다. [Memory](./docs/glossary.html#memory)에는 사용자별로 구분되는 설정이 남습니다. 「이 사람은 결과를 표가 아니라 유형별 목록으로 받는다」가 이쪽입니다. 가르는 기준은 다른 사람이 물어도 같은 답이 나와야 하는가입니다. Lab 3에서 뒤쪽을 직접 남겨 봅니다.
+[Knowledge](./docs/glossary.html#knowledge)에는 에이전트가 늘 갖고 있어야 하는 고정 지식이 들어갑니다. 회사의 규정이 여기입니다. 「프로젝트 비용에는 프로젝트 코드가 필요하다」(규정 §6.2)가 그것입니다. [Memory](./docs/glossary.html#memory)에는 사용자별로 구분되는 설정이 남습니다. 「이 사람은 결과를 표가 아니라 사람별 목록으로 받는다」가 이쪽입니다. 가르는 기준은 다른 사람이 물어도 같은 답이 나와야 하는가입니다. Lab 3에서 뒤쪽을 직접 남겨 봅니다.
 
 <!-- 저작 메모(2026-09-07 실측): Memory 예시를 「프로젝트 코드를 먼저 확인받는다」에서 바꿨다.
      그 문장을 Lab 3 에서 실제로 넣어 봤더니 규정 문답으로 처리되고 Saved memories 는
