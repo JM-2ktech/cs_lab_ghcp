@@ -154,7 +154,7 @@ Lab 1의 29번 화면을 그대로 두고 시작합니다. **양식이 제각각
      ![기술을 저장하는 중 대화상자](../assets/lab2/lab2-07.png)
 
      {: .note }
-     **직접 제작한 zip이 업로드 되지 않으면** 같은 내용으로 미리 제작해둔 [expense-reconcile.zip](../materials/expense-reconcile/expense-reconcile.zip) 을 내려받아 적용합니다. 
+     **직접 제작한 zip이 업로드 되지 않으면** 같은 내용으로 미리 제작해둔 [expense-reconcile.zip](../materials/expense-reconcile/expense-reconcile.zip) 을 다운로드해 적용합니다. 
 
 16. 목록에 `expense-reconcile` 이 올라왔는지 봅니다. 2번에서 본 목록 옆에 붙습니다.
 

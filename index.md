@@ -70,7 +70,7 @@ Copilot 채팅 하네스로는 오늘 아무것도 만들지 않습니다. 다�
 ```mermaid
 flowchart LR
     A[Agent · Sandbox<br>판단하고 대사한다] --> B[Skill<br>회사 방식으로]
-    B --> C[Memory · 게시<br>맥락을 남기고 밖으로]
+    B --> C[Memory<br>맥락을 남긴다]
     C --> D[Workflow<br>받아서 가른다]
 ```
 
@@ -87,8 +87,8 @@ flowchart LR
 | [시작 전에](./docs/before-you-start.html) | 10 | 환경 확인 · 재료 내려받기 |
 | [Lab 1. 판단하는 Agent](./docs/lab1.html) | 40 | Agent · [Knowledge](./docs/glossary.html#knowledge) · 실행 환경 · **1,000행 대사** |
 | [Lab 2. Skill](./docs/lab2.html) | 35 | 내장 스킬 · 커스텀 스킬 · 표준 양식 문서 |
-| [Lab 3. Memory와 게시](./docs/lab3.html) | 25 | [Memory](./docs/glossary.html#memory) · 에이전트 화면 · 게시 |
-| [Lab 4. Workflow](./docs/lab4.html) | 50 | 분류 · Agent 노드 · M365 Copilot · Teams |
+| [Lab 3. Memory](./docs/lab3.html) | 25 | [Memory](./docs/glossary.html#memory) · 색인과 본문 · 에이전트 화면 |
+| [Lab 4. Workflow](./docs/lab4.html) | 55 | 게시 · 분류 · Agent 노드 · M365 Copilot · Teams |
 | [피날레](./docs/finale.html) | 2 | 오늘 한 것과 안 한 것 |
 
 용어는 [용어집](./docs/glossary.html)에 처음 등장 순서대로 정리해 두었습니다.
