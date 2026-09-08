@@ -8,14 +8,19 @@ nav_order: 1
 **"두 개의 파일로 완료된 월말 정산."**
 
 <!-- 저작 메모(2026-09-02 개편): 랩 넷 확정에 맞춰 이 페이지를 다시 맞췄다.
-     분 배정은 설계 문서 §2가 확정본이다. 여기 표를 §2 표와 어긋나게 두지 않는다. -->
+     분 배정은 설계 문서 §2가 확정본이다. 여기 표를 §2 표와 어긋나게 두지 않는다.
+     2026-09-08: /tone 검수 — 「자리」·의인화·대구를 걷어냈다.
+                 검출은 ~/.claude/skills/tone/dialect.py 가 한다.
+     2026-09-08: /tone 전문 검수 — 말투(비유·구어·의인화) 외에 띄어쓰기 오류와
+                 비문, 절 제목 종결형 불일치를 함께 고쳤다. dialect.py 0건.
+     -->
 
-법인카드 명세에 1,000행의 결과와 증빙 대장에 있는 997행을 대조합니다. 숫자가 다르니 어딘가 어긋나 있습니다. 어긋난 것을 찾아 목록으로 만들고, 맞는 것은 처리 문서로 수행합니다. 이 한 가지 업무를 구현하면서 하네스의 여섯 부품을 만납니다.
+법인카드 명세 1,000행과 증빙 대장 997행을 대조합니다. 행 수가 다르니 어딘가 어긋나 있습니다. 어긋난 것을 찾아 목록으로 만들고, 일치하는 것은 처리 문서로 만듭니다. 이 한 가지 업무를 구현하면서 하네스의 여섯 부품을 다룹니다.
 
-**복리후생 문의를 받던 에이전트가 답하지 못한 자리**에서 시작합니다. 규정을 읽고 문답하는 것과 파일 두 개를 열어 맞춰 보는 것은 다른 일입니다.
+**복리후생 문의를 받던 에이전트가 답하지 못한 상황**에서 시작합니다. 규정을 읽고 문답하는 것과 파일 두 개를 열어 맞춰 보는 것은 다른 일입니다.
 
 {: .note }
-이 사이트는 **3시간 과정**을 목적으로 합니다. Lab 1~4와 피날레로 한 세션이 구성됩니다.
+이 사이트는 **3시간 과정**을 목적으로 합니다. Lab 1~4로 한 세션이 구성됩니다.
 
 ---
 
@@ -48,18 +53,18 @@ nav_order: 1
 {: .important }
 **하네스는 만들 때 고릅니다.** 표준과 GitHub Copilot은 서로 직접 변환되지 않습니다. 옮기려면 다시 만듭니다.
 
-[표준 하네스](./docs/glossary.html#standard-harness)와 달리 GitHub Copilot 하네스에는 [토픽](./docs/glossary.html#topic)이 없습니다. 길을 미리 그려 두지 않고, [Agent](./docs/glossary.html#agent)가 자료를 보고 무슨 일인지 판단합니다. 표의 「경로를 누가 정하나」 한 줄이 오늘 세 시간 내내 돌아오는 자리입니다.
+[표준 하네스](./docs/glossary.html#standard-harness)와 달리 GitHub Copilot 하네스에는 [토픽](./docs/glossary.html#topic)이 없습니다. 길을 미리 그려 두지 않고, [Agent](./docs/glossary.html#agent)가 자료를 보고 무슨 일인지 판단합니다. 표의 「경로를 누가 정하나」 한 줄이 랩마다 다시 나오는 질문입니다.
 
-### 세 트랙에서 오늘이 선 자리
+### 세 트랙 중 오늘은 어디인가
 
 | 과정 | 하네스 | 다루는 것 |
 |---|---|---|
 | 입문 · 중급 | 표준 | [Knowledge](./docs/glossary.html#knowledge) · [토픽](./docs/glossary.html#topic) · 플로 · 커넥터 |
 | 오늘 | GitHub Copilot | [Skill](./docs/glossary.html#skill) · [Memory](./docs/glossary.html#memory) · [Sandbox](./docs/glossary.html#sandbox) · 연결된 에이전트 · [Workflow](./docs/glossary.html#workflow) |
 
-아는 것을 답하는 데서 시작해, 상태를 바꾸는 데로 가고, 업무를 끝까지 수행하는 데까지 갑니다. 오늘은 마지막 칸입니다.
+세 트랙이 이 순서로 이어집니다 — 아는 것을 답한다, 상태를 바꾼다, 업무를 끝까지 수행한다. 오늘이 세 번째입니다.
 
-Copilot 채팅 하네스로는 오늘 아무것도 만들지 않습니다. 다만 [Lab 4](./docs/lab4.html)에서 M365 Copilot 노드를 붙일 때 그쪽 자리를 한 번 만납니다.
+Copilot 채팅 하네스로는 오늘 아무것도 만들지 않습니다. 다만 [Lab 4](./docs/lab4.html)에서 M365 Copilot 노드를 붙일 때 그 화면을 한 번 거칩니다.
 
 <!-- 촬영: Add knowledge 대화상자 또는 하네스 선택 화면. 프로브 뒤에 찍는다 -->
 
@@ -86,10 +91,9 @@ flowchart LR
 |---|---|---|
 | [시작 전에](./docs/before-you-start.html) | 10 | 환경 확인 · 재료 내려받기 |
 | [Lab 1. 판단하는 Agent](./docs/lab1.html) | 40 | Agent · [Knowledge](./docs/glossary.html#knowledge) · 실행 환경 · **1,000행 대사** |
-| [Lab 2. Skill](./docs/lab2.html) | 35 | 내장 스킬 · 커스텀 스킬 · 표준 양식 문서 |
-| [Lab 3. Memory](./docs/lab3.html) | 25 | [Memory](./docs/glossary.html#memory) · 색인과 본문 · 에이전트 화면 |
+| [Lab 2. Skill](./docs/lab2.html) | 30 | 내장 스킬 · 커스텀 스킬 · 표준 양식 문서 |
+| [Lab 3. Memory](./docs/lab3.html) | 20 | [Memory](./docs/glossary.html#memory) · 기억이 쌓이는 모양 · 추론 읽기 |
 | [Lab 4. Workflow](./docs/lab4.html) | 55 | 게시 · 분류 · Agent 노드 · M365 Copilot · Teams |
-| [피날레](./docs/finale.html) | 2 | 오늘 한 것과 안 한 것 |
 
 용어는 [용어집](./docs/glossary.html)에 처음 등장 순서대로 정리해 두었습니다.
 
@@ -106,17 +110,17 @@ flowchart LR
         라우팅은 매번 같게 나오지 않는다 — 규칙처럼 쓰지 말 것. -->
 
 **행의 개수를 세는 것과 회계적 대사는 다르다**
-명세와 대장의 행의 개수 차이는 3입니다. 다만 실제로 데이터의 차이는 3개가 아닙니다.
+명세와 대장의 행 수 차이는 3입니다. 다만 어긋난 데이터가 3건이라는 뜻은 아닙니다.
 
 <!-- 미확정 — 어긋난 데이터의 건수를 숫자로 못 박지 않았다. 면제 3 · 누락 1 · 중복 1 · 금액 1 을
      어디까지 세느냐에 따라 5 도 6 도 된다. 에이전트를 만들어 실제로 돌려 본 뒤 확정한다.
      확정되면 여기와 _instructions/재료_설계와_정답.md §4 를 같은 숫자로 맞춘다. -->
 
 **실행 환경을 바꾸면 처리할 수 있는 양이 달라진다**
-[Sandbox](./docs/glossary.html#sandbox)는 파일 자체를 열어 전체를 읽습니다. 그만큼 [Copilot Credits](./docs/glossary.html#copilot-credits)를 씁니다. 다만 읽는 행의 개수가 곧 사용량의 정비례가 되는 것은 아닙니다.
+[Sandbox](./docs/glossary.html#sandbox)는 파일 자체를 열어 전체를 읽습니다. 그만큼 [Copilot Credits](./docs/glossary.html#copilot-credits)를 씁니다. 다만 읽는 행이 늘어난 만큼 사용량이 늘지는 않습니다.
 
-**자동화하지 않을 자리를 정하는 것도 설계다**
-Lab 4에서 비용 처리와 무관한 요청을 사람에게 돌리는 경로를 직접 만듭니다. 무책임한 자동화보다 확인을 통한 프로세스 처리가 더욱 안정적인 자동화입니다.
+**자동화하지 않을 범위를 정하는 것도 설계다**
+Lab 4에서 비용 처리와 무관한 요청을 사람에게 돌리는 경로를 직접 만듭니다. 사람이 확인하는 경로를 남겨 두면 자동화가 더 안정적으로 동작합니다.
 
 ---
 

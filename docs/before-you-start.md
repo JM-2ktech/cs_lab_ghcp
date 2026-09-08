@@ -5,7 +5,7 @@ nav_order: 2
 
 # 시작 전에 ✅
 
-> **이번 시간 완성물**: 환경을 확인하고, 사전 제공파일들을 확인한다 <br>
+> **이번 시간 완성물**: 환경을 확인하고, 사전 제공 파일을 준비한 상태 <br>
 > **예상 시간**: 10분 <br>
 > **완성 신호**: 재료 파일을 열어 행 수를 확인했다
 
@@ -16,9 +16,9 @@ nav_order: 2
 
 ## 오늘 만들 것
 
-한별소프트 경리팀의 월말 업무입니다. 카드사에서 내려받은 **명세 1,000행**과 직원들이 올린 **증빙 대장 997행**을 대조 합니다.
+한별소프트 경리팀의 월말 업무입니다. 카드사에서 내려받은 **명세 1,000행**과 직원들이 올린 **증빙 대장 997행**을 대조합니다.
 
-불일치한 데이터를 찾아 목록으로 만들고, 일치 하는것은 처리 문서로 넘깁니다.
+어긋난 데이터를 찾아 목록으로 만들고, 일치하는 것은 처리 문서로 넘깁니다.
 
 ---
 
@@ -36,7 +36,12 @@ nav_order: 2
 <!-- 저작 메모: csv 판(카드내역_2026-07.csv · 증빙대장_2026-07.csv)도 materials/ 에 있다.
      GHCP 하네스의 대화 첨부 지원 형식에 xlsx 가 없다(이미지·PDF·txt/csv/html/md·URL).
      프로브 1에서 xlsx 첨부가 막히면 이 표를 csv 로 갈아 끼운다. 링크만 바꾸면 된다.
-     https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/attachments-overview -->
+     https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/attachments-overview
+     2026-09-08: /tone 검수 — 「자리」·의인화·대구를 걷어냈다.
+                 검출은 ~/.claude/skills/tone/dialect.py 가 한다.
+     2026-09-08: /tone 전문 검수 — 말투(비유·구어·의인화) 외에 띄어쓰기 오류와
+                 비문, 절 제목 종결형 불일치를 함께 고쳤다. dialect.py 0건.
+     -->
 
 
 ## 지식 원본을 어떻게 등록하나
@@ -129,7 +134,7 @@ Copilot Studio에서 만드는 것은 전부 **하네스** 위에서 실행됩�
 | 오케스트레이션 | 하네스 안에서 도는 루프. 계획 · 도구 선택 · 관찰 · 완료 판단 |
 
 {: .note }
-**오케스트레이션은 하네스가 하는 일 중 하나입니다.** 둘을 같은 말로 쓰는 문서도 있지만, Copilot Studio 쪽은 구분지어 씁니다. GHCP 하네스는 「향상된 오케스트레이션 런타임 **위에** 서 있다」고 적히고, 표준 하네스는 「오케스트레이션 동작을 **고를 수 있다**」고 설명합니다([GitHub Copilot Harness overview](https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/overview)). 하네스를 고르는 것이 먼저이고, 그 안에서 루프가 정해집니다.
+**오케스트레이션은 하네스가 하는 일 중 하나입니다.** 둘을 같은 말로 쓰는 문서도 있지만, Copilot Studio 쪽은 구분해 씁니다. GHCP 하네스는 「향상된 오케스트레이션 런타임 **위에** 서 있다」고 적히고, 표준 하네스는 「오케스트레이션 동작을 **고를 수 있다**」고 설명합니다([GitHub Copilot Harness overview](https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/overview)). 하네스를 고르는 것이 먼저이고, 그 안에서 루프가 정해집니다.
 
 <!-- 저작 메모(2026-09-02): 「Model ↔ Orchestrator ↔ Harness 3계층」 도식을 쓰지 않는다.
      오케스트레이터를 하네스 위 별도 층으로 두면, 그 층이 계획할 때도 모델이 필요하므로
@@ -139,7 +144,7 @@ Copilot Studio에서 만드는 것은 전부 **하네스** 위에서 실행됩�
         에이전트 아키텍처 일반을 다루는 글의 느슨한 동격이다. Copilot Studio 문서 셋은 갈라 쓴다 —
         agents-experience/overview(built on / configurable), guidance/generative-orchestration(planner). -->
 
-### 하네스가 구분되는 자리
+### 하네스를 가르는 것 — 런타임 루프
 
 무엇을 부품으로 쓸 수 있고 얼마를 내는지는 [홈의 비교표](../#무엇이-갈리나)에 있습니다. 실제로 구분되는 것은 **그 런타임 루프가 어떤 방식으로 수행되는가**입니다.
 
@@ -150,7 +155,7 @@ Copilot Studio에서 만드는 것은 전부 **하네스** 위에서 실행됩�
 오늘 쓰는 것이 뒤쪽입니다. Word·Excel·PowerPoint·PDF를 만들고, [Skill](./glossary.html#skill)·[Memory](./glossary.html#memory)를 쓰며, 과금은 [Copilot Credits](./glossary.html#copilot-credits)입니다.
 
 {: .important }
-**GHCP 하네스에는 토픽이 없습니다.** 사용자의 질문을 미리 토픽으로 분기시키지 않습니다. Agent가 입력과 자료를 보고 무슨 일인지 판단합니다. 초급 및 중급 과정(Copilot Studio 표준 하네스)과 구분되는 자리입니다.
+**GHCP 하네스에는 토픽이 없습니다.** 사용자의 질문을 미리 토픽으로 분기시키지 않습니다. Agent가 입력과 자료를 보고 무슨 일인지 판단합니다. 초급 및 중급 과정(Copilot Studio 표준 하네스)과 구분되는 점입니다.
 
 ---
 
@@ -171,7 +176,7 @@ Copilot Studio에서 만드는 것은 전부 **하네스** 위에서 실행됩�
 - [Harnesses in Copilot Studio](https://learn.microsoft.com/microsoft-copilot-studio/harnesses-overview) (하네스가 셋인 것과 그 차이)
 - [Agents powered by the GitHub Copilot Harness overview](https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/overview) (GHCP 하네스가 오케스트레이션 런타임 위에 선다는 것)
 - [Apply generative orchestration capabilities](https://learn.microsoft.com/microsoft-copilot-studio/guidance/generative-orchestration) (표준 하네스를 planner 로 놓는 구성도)
-- [Choice of agent host](https://learn.microsoft.com/agents/architecture/host-platform) (오케스트레이터와 하네스를 붙여 쓴 자리. 위 둘과 다르게 읽힙니다)
+- [Choice of agent host](https://learn.microsoft.com/agents/architecture/host-platform) (오케스트레이터와 하네스를 붙여 쓴 문서. 위 둘과 다르게 읽힙니다)
 - [Add file upload](https://learn.microsoft.com/microsoft-copilot-studio/knowledge-add-file-upload) · [Add SharePoint](https://learn.microsoft.com/microsoft-copilot-studio/knowledge-add-sharepoint) (지식 원본 두 경로의 차이)
 - [Attachments overview](https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/attachments-overview) (대화 첨부가 받는 형식)
 
