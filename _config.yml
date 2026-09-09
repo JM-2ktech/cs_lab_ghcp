@@ -37,6 +37,12 @@ aux_links:
   "Microsoft Learn — 하네스 고르기":
     - "https://learn.microsoft.com/microsoft-copilot-studio/harnesses-overview"
 
+# 왼쪽 메뉴 맨 아래에 붙는 바깥 링크. 교육 후 설문 양식이다.
+nav_external_links:
+  - title: 설문
+    url: "https://forms.cloud.microsoft/r/UwgwAV2peq"
+    opens_in_new_tab: true
+
 nav_sort: order
 color_scheme: light
 
