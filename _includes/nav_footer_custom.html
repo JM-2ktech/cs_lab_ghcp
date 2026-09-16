@@ -13,6 +13,11 @@
   ⚠️ 「이 페이지 편집」(`gh_edit_link`)은 쓰지 않는다. 공개 저장소는 미러이고
      동기화할 때마다 정본으로 덮어쓴다 — 거기서 고친 것은 다음 sync 에서 사라진다.
      그래서 문구도 「편집」이 아니라 「소스」다.
+
+  ⚠️ 저장소 주소를 글자로 박지 않는다(2026-09-14). 이 파일은 네 저장소가 글자 그대로 같은
+     공유 인프라라, 주소를 박으면 사본 셋의 푸터가 전부 `cs_lab` 을 가리킨다.
+     `baseurl` 이 곧 저장소 이름이라는 전제로 주소를 만든다 — `linkcheck.py` 가 저장소를
+     가리는 방식과 같다. 저장소 이름과 `baseurl` 이 갈리면 이 줄이 틀린다.
 {%- endcomment -%}
-이 사이트의 소스는 <a href="https://github.com/JM-2ktech/cs_lab">GitHub</a>에 있습니다.
+이 사이트의 소스는 <a href="https://github.com/JM-2ktech{{ site.baseurl }}">GitHub</a>에 있습니다.
 <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a> 테마로 만들었습니다.

@@ -40,7 +40,7 @@ aux_links:
 # 왼쪽 메뉴 맨 아래에 붙는 바깥 링크. 교육 후 설문 양식이다.
 nav_external_links:
   - title: 설문
-    url: "https://forms.cloud.microsoft/r/UwgwAV2peq"
+    url: "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=byHJSWarrEiOXxuxAqx5YfA7JqsXOW5JlR-1DFl0RLBUQVZIQVNKVDJHSlVTQlJRVDFGNFRYSTlVQy4u"
     opens_in_new_tab: true
 
 nav_sort: order
