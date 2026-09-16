@@ -7,7 +7,9 @@ vendor/
 
 # 내부 저작 가이드·컨텍스트 (로컬 전용)
 # ⚠️ 백업 대상이다. clone하면 따라오지 않는다.
+# AGENTS.md 는 CLAUDE.md 와 같은 내용이다. 둘 다 막는다 (2026-09-16).
 CLAUDE.md
+AGENTS.md
 _workspace/
 
 # ⚠️ `_instructions/` 는 추적하지 않는다 (2026-09-07, 퍼블릭 공개 결정).
